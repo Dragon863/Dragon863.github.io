@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dragon863</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="style.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">   <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+  <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
+  <script src="clipboard.js"></script>
+</head>
+  <body class="dark" style="--primary:#FF2D2D;--secondary-container:#ff242465;--on-primary-container:#FFFFFF;--on-secondary-container:#FFFFFF;--on-surface:#FFFFFF;--on-primary:#FFFFFF;--on-secondary:#FFFFFF">
+    <nav class="right white-text m l">
+      <img src="profile-picture.png" class="circle large transparent">
+      <a href="/">
+        <i>home</i>
+        <div>Home</div>
+      </a>
+      <a class="active" href="/blog">
+        <i>book</i>
+        <div>Blog</div>
+      </a>
+      <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+        <i>share</i>
+        <div>Share</div>
+      </a>
+    </nav>
+    <div class="modal" id="share">
+      <h5 class="white-text bold">Share Page</h5>
+      <div>Send the link to this page!</div>
+      <nav class="left-align">
+        <nav class="no-space">
+          <button class="border left-round" onclick="sharePage()">
+            <i>link</i>
+            <span id="copyText">Copy URL</span>
+          </button>
+          <button class="border right-round" onclick="document.location.href='mailto:?body=Check%20out%20this%20article!%20https://dragon863.github.io/blog/alexa.html'">
+            <i>mail</i>
+            <span>email</span>
+          </button>
+        </nav>
+        
+      </nav>
+    </div>
+    <nav class="bottom s bottom-shadow">
+      <a href="/">
+        <i>home</i>
+      </a>
+      <a href="/blog" class="active">
+        <i>book</i>
+      </a>
+      <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+        <i>share</i>
+      </a>
+    </nav>
+    <div class="toast green white-text" id="toast">
+      <i>done</i>
+      <span>Copied URL!</span>
+    </div>
+    <main class="responsive">
+        <div class="page left active">
+            <div class="responsive">
+              <h1 class="bold large-padding m l" style="font-weight:medium; font-size:96px;letter-spacing: 1px;">"Alexa, what is my wifi password?"</h1>
+              <h1 class="bold large-padding s" style="font-weight:medium; font-size:48px;letter-spacing: 1px;">"Alexa, what is my wifi password?"</h1>
+              <div class="max m l" style="border-bottom: 4px solid #FF2D2D;"></div>
+            </div>
+            <h5 class="large-text" style="font-size: 24px;"><a class="link bold underline" href="/">Daniel B</a>&nbsp;&nbsp;&nbsp;March 15, 2023</h5>
+            <br>
+            <img class="round" src="echo.jpeg" style="width:100%;height:100%" alt="An amazon echo dot 2nd generation on a shelf"></img>
+            <br>
+            <br>
+            <div id="article">
+              <p style="font-size: 24px;">
+                Amazon is well known for its "echo" devices. Launched in 2014, these voice assistants were used to interact with amazon's services, answer questions and stream music. As time went on the devices grew in popularity; as of 2023 they account for 21.7% of global smart speaker purchases. There have been several notable attempts to run custom software on echo devices, such as <a href="https://github.com/echohacking/wiki/wiki/Echo" class="link underline">this</a> project, however they have proven to be relatively secure. With so many devices in use, a weaponised echo device could be a very dangerous tool, allowing eavesdropping on sensitive conversation and giving false resonses, or in this case, extracting sensitive information such as wifi passwords. More modern devices from the company run fireOS, Amazon's modified version of Android, on a MediaTek CPU. This is interesting, as it means both the hardware and software are similar to that found on Amazon Fire tablets. I have been experimenting with an echo dot 2nd generation, which uses a MT8163 processor found in the HD 8 from 2018. This fire tablet was rooted using an exploit known as <a href="https://github.com/xyzz/amonet" class="link underline">amonet</a>, which means it was possible to port this exploit to the echo. 
+                </p>
+                <h4 style="font-size:32px" class="bold">Exploiting the processor: you can too!</h4>
+                <p style="font-size: 24px;">
+                After a few minor modifications, I managed to make the main amonet script dump the contents of the storage(eMMC flash memory). The modified version can be found <a href="https://github.com/Dragon863/amonet-echo" class="link underline">here</a>, and a graphical version is available <a href="https://github.com/Dragon863/amonet-graphical/releases" class="link underline">here</a>.  The memory can be dumped when the device is in bootrom mode, which can be forced by placing a piece of tin foil to short the capacitor shown below to the RF shield, which temporarily prevents it from being able to boot. For a detailed dissassembly guide please check ifixit.
+                </p>
+                <img class="round m l" src="mainboard.jpg" style="width:30rem;height:30rem" alt="The main board of the echo"></img>
+                <img class="round s" src="mainboard.jpg" style="width:100%;height:100%" alt="The main board of the echo"></img>
+                <p style="font-size: 24px;">
+                Once I had the filesystem, I began to analyse its contents, and what I found was very interesting. It seemed to use a tool called <span style="font-size: 24px;color: #FF2D2D;">wpa_supplicant</span> to manage its wireless connections, which is not uncommon on older android versions. When using this tool, it is good practice to hash the password for the wireless network before storing it in the configuration file (encrypt it in a way that cannot be reversed). This can be done with one simple command (wpa_passphrase), however, amazon's internal team lab126 (who develops their consumer hardware), chose not to use this. It may not seem like a significant decision, however when you consider that anyone with physical access to an amazon device using this vulnerable processor (it is also used by multiple echo show devices) can extract network passwords with relative ease. 
+                </p>
+                <h4 style="font-size:32px" class="bold">What does this mean?</h4>
+                <p style="font-size: 24px;">
+                Storing passwords in plain text is a major security risk in hotels or businesses using the devices on their internal or private wireless networks, giving any potential attackers access to any other equipment on this network or allowing them to create a rogue network and redirect traffic or conduct a MITM (man-in-the-middle) attack. It may also breach the <a class="link underline" href="https://www.gov.uk/data-protection">Data Protection Act</a> which states customer data must be 'handled in a way that ensures appropriate security'. Hashing passwords is an industry standard, and for a company that has sold their hardware to millions, it is completely unacceptable to not encrypt this data.  But it gets even worse. A plain-text configuration file located in <span style="font-size: 24px;color: #FF2D2D;">/system/etc</span> includes API keys for spotify zeroconf and eSDK APIs, if accessed these could allow anybody to play audio from the device and potentially send audio to fake a notification or alert. 
+                </p>
+                <h4 style="font-size:32px" class="bold">Modifications</h4>
+                <p style="font-size:24px">
+                  As for booting modified software, its is difficult but not impossible. Unfortunately, I bricked my echo by carelessly flashing the wrong file, but not before finding some useful information. All mediatek devices use something called a <span style="font-size: 24px;color: #FF2D2D;">preloader</span>. It is essentially a loader for the bootloader, a very low level piece of software that runs on the cpu each boot. If anybody successfully patches the preloader to bypass checks of the mediatek 'little kernel' (lk) and 'unlock_code', we can write zeros to the start of the preloader and boot from the patched version. However, this would mean using a computer every time you bot your echo. As the device runs fireOS, the command <span style="font-size: 24px;color: #FF2D2D;">fastboot oem flags fos_flags:0x80</span> should work to disable dm-verity, which is used to verify the integrity of android images and allow us to run unsigned code. This would be very serious as it would allow devices to be modified to send data to an attacker instead of amazon. 
+                </p>
+                <h4 style="font-size:32px" class="bold">Conclusion</h4>
+                <p style="font-size: 24px;">
+                  In summary, whilst some aspects of the echo dot are very secure they are not immune to tampering and modification, and demonstrate an extreme lack of security when it comes to password storage. When designing embedded hardware, it is essential to consider physical security, and I hope that we can bring this issue to Amazon's attention and find a permenant solution to prevent any security breaches.
+                </p>
+            </div>
+          </div>
+        </div>
+        <div class="large-space"></div>
+        <nav class="wrap">
+          <a href="mailto:Dragon863@gmail.com" class="link large-text">Contact Me</a>
+          •
+          <a href="https://github.com/Dragon863" class="link large-text">Github</a>
+        </nav>
+    </main>
+  </body>
+</html>

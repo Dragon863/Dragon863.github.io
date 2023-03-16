@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dragon863</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.css" rel="stylesheet" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
+  <script src="clipboard.js"></script>
+</head>
+  <body class="dark" style="--primary:#FF2D2D;--secondary-container:#ff242465;--on-primary-container:#FFFFFF;--on-secondary-container:#FFFFFF;--on-surface:#FFFFFF;--on-primary:#FFFFFF;--on-secondary:#FFFFFF">
+    <nav class="right  m l">
+      <img src="profile-picture.png" class="circle large transparent">
+      <a href="/">
+        <i>home</i>
+        <div>Home</div>
+      </a>
+      <a class="active" href="/blog.html">
+        <i>book</i>
+        <div>Blog</div>
+      </a>
+      <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+        <i>share</i>
+        <div>Share</div>
+      </a>
+      </a>
+    </nav>
+    <div class="modal" id="share">
+      <h5 class=" bold">Share Page</h5>
+      <div>Send the link to this page!</div>
+      <nav class="left-align">
+        <nav class="no-space">
+          <button class="border left-round" onclick="sharePage()">
+            <i>link</i>
+            <span id="copyText">Copy URL</span>
+          </button>
+          <button class="border right-round"  onclick="document.location.href='mailto:?body=Check%20out%20this%20blog!%20https://dragon863.github.io/blog.html'">
+            <i>mail</i>
+            <span>email</span>
+          </button>
+        </nav>
+        
+      </nav>
+    </div>
+    <nav class="bottom s bottom-shadow">
+      <a href="/">
+        <i>home</i>
+      </a>
+      <a href="/blog" class="active">
+        <i>book</i>
+      </a>
+      <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+        <i>share</i>
+      </a>
+    </nav>
+    <div class="toast green " id="toast">
+      <i>done</i>
+      <span>Copied URL!</span>
+    </div>
+    <main class="responsive">
+        <h3 class="bold underline">Posts</h3>
+        <div class="page left active">
+            <div class="grid">
+                <div class="s12 m l">
+                    <article class="no-padding">
+                        <div class="grid no-space">
+                        <div class="s4">
+                            <img class="responsive" src="blog/echo.jpeg">
+                            <button class="circle small absolute left top margin shadow "><h5 class="no-margin center-align">1</h5></button>
+                        </div>
+                        <div class="s8">
+                            <div class="padding">
+                            <h5 class="bold">Alexa, what is my wifi password?</h5>
+                            <p>Taking a closer look at the echo dot 2nd generation using a known CPU exploit reveals a severe lack of security for its password storage.</p>
+                            <nav>
+                              <button class="border round" onclick="window.location.href='/blog/alexa.html'">Read</button>
+                            </nav>
+                            </div>
+                        </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="s12 s">
+                    <article class="no-padding">
+                        <div class="s6">
+                            <img class="responsive" src="blog/echo.jpeg">
+                            <button class="circle small absolute left top margin shadow "><h5 class="no-margin center-align">1</h5></button>
+                        </div>
+                        <div class="s6">
+                            <div class="padding">
+                            <h5 class="bold">Alexa, what is my wifi password?</h5>
+                            <p>Taking a closer look at the echo dot 2nd generation using a known CPU exploit reveals a severe lack of security for its password storage.</p>
+                            <nav>
+                              <button class="border round" onclick="window.location.href='/blog/alexa.html'">Read</button>
+                            </nav>
+                            </div>
+                        </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+  </body>
+</html>
