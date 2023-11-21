@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dragon863</title>
+    <link>https://dragon863.github.io</link>
+    <description>Feed from Dragon863's site</description>
+    <atom:link href="https://yourwebsite.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alexa, what is my WiFi password?</title>
+      <link>https://dragon863.github.io/blog/alexa.html</link>
+      <description>Taking a closer look at the Echo Dot 2nd generation using a known CPU exploit reveals a severe lack of security for its password storage.</description>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Rooting the Amazon Echo Dot</title>
+      <link>https://dragon863.github.io/blog/echoroot.html</link>
+      <description>A new method to gain a tethered root shell on the Echo Dot 2nd generation by patching the Little Kernel.</description>
+      <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
