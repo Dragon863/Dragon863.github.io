@@ -1,126 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <title>Dragon863</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.css" rel="stylesheet" />
-  <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.js"></script>
-  <script type="module"
-    src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
-  <script src="clipboard.js"></script>
-  <meta name="author" content="Daniel B">
-  <meta name="description"
-    content="Hi there, I'm Daniel B (aka @Dragon863), a 15 year old developer. Welcome to my personal blog and portfolio!">
-  <meta name="keywords" content="Daniel, Dragon863, Cybersecurity, Alexa, Blog">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Dragon863</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.css" rel="stylesheet" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.js"></script>
+    <script type="module"
+      src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
+    <script src="clipboard.js"></script>
+    <meta name="author" content="Daniel B">
+    <meta name="description"
+      content="Hi there, I'm Daniel B (aka @Dragon863), a 15 year old developer. Welcome to my personal blog and portfolio!">
+    <meta name="keywords" content="Daniel, Dragon863, Cybersecurity, Alexa, Blog">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  </head>
 
-<body class="dark"
-  style="--primary:#FF2D2D;--secondary-container:#ff242465;--on-primary-container:#FFFFFF;--on-secondary-container:#FFFFFF;--on-surface:#FFFFFF;--on-primary:#FFFFFF;--on-secondary:#FFFFFF">
-  <nav class="right  m l">
-    <img src="profile-picture.png" class="circle large transparent" alt="Profile Picture"></img>
-    <a href="/">
-      <i>home</i>
-      <div>Home</div>
-    </a>
-    <a class="active" href="/blog.html">
-      <i>book</i>
-      <div>Blog</div>
-    </a>
-    <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
-      <i>share</i>
-      <div>Share</div>
-    </a>
-    </a>
-  </nav>
-  <div class="modal" id="share">
-    <h5 class=" bold">Share Page</h5>
-    <div>Send the link to this page!</div>
-    <nav class="left-align">
-      <nav class="no-space">
-        <button class="border left-round" onclick="sharePage()">
-          <i>link</i>
-          <span id="copyText">Copy URL</span>
-        </button>
-        <button class="border right-round"
-          onclick="document.location.href='mailto:?body=https\://dragon863.github.io/blog.html'">
-          <i>mail</i>
-          <span>email</span>
-        </button>
-      </nav>
-
+  <body class="dark"
+    style="--primary:#FF2D2D;--secondary-container:#ff242465;--on-primary-container:#FFFFFF;--on-secondary-container:#FFFFFF;--on-surface:#FFFFFF;--on-primary:#FFFFFF;--on-secondary:#FFFFFF">
+    <nav class="right  m l">
+      <img src="profile-picture.png" class="circle large transparent" alt="Profile Picture"></img>
+      <a href="/">
+        <i>home</i>
+        <div>Home</div>
+      </a>
+      <a class="active" href="/blog.html">
+        <i>book</i>
+        <div>Blog</div>
+      </a>
+      <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+        <i>share</i>
+        <div>Share</div>
+      </a>
+      </a>
     </nav>
-  </div>
-  <nav class="bottom s bottom-shadow">
-    <a href="/">
-      <i>home</i>
-    </a>
-    <a href="/blog" class="active">
-      <i>book</i>
-    </a>
-    <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
-      <i>share</i>
-    </a>
-  </nav>
-  <div class="toast green" id="toast">
-    <i>done</i>
-    <span>Copied URL!</span>
-  </div>
-  <main class="responsive small-padding">
-    <h3 class="bold underline padding">Posts</h3>
-    <div class="page left active">
-      <div class="grid">
-        <div class="s12">
-          <article class="padding">
-            <div class="">
-              <h5>
-                <p class="bold">New release:&nbsp;</p>HA-Tizen
-              </h5>
-              <p> This is a small, unofficial companion app written using flutter-tizen to control lights and switches using Home Assistant. I created it because I wanted to use Home Assistant on my tizen watch which is no longer officially supported by Samsung, and wanted there to be a way to control devices without manually typing out tokens.</p>
-              <nav>
-                <a href="https://github.com/Dragon863/Tizen-HA/">
-                  <button class="round border" style="margin-left: 0px;">
-                    <img class="responsive"
-                      src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
-                    <span style="color:white">GitHub</span>
-                  </button>
-                </a>
-              </nav>
-            </div>
-          </article>
-        </div>
-        <div class="s12">
-          <article class="padding">
-            <div class="">
-              <h5>
-                <p class="bold">New release:&nbsp;</p>ThinkLED
-              </h5>
-              <p> ThinkLED is a simple flutter app for thinkpads using tpacpi on linux. It can be used to toggle the
-                power and lid LEDs, or transmit a message in morse code using the lid LED. This is my first flutter
-                project</p>
-              <nav>
-                <a href="https://github.com/Dragon863/ThinkLed">
-                  <button class="round border" style="margin-left: 0px;">
-                    <img class="responsive"
-                      src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
-                    <span style="color:white">GitHub</span>
-                  </button>
-                </a>
-              </nav>
-            </div>
-          </article>
-        </div>
-        <div class="s12 m l">
-          <article class="no-padding">
-            <div class="grid no-space">
-              <div class="s4">
+    <div class="modal" id="share">
+      <h5 class=" bold">Share Page</h5>
+      <div>Send the link to this page!</div>
+      <nav class="left-align">
+        <nav class="no-space">
+          <button class="border left-round" onclick="sharePage()">
+            <i>link</i>
+            <span id="copyText">Copy URL</span>
+          </button>
+          <button class="border right-round"
+            onclick="document.location.href='mailto:?body=https\://dragon863.github.io/blog.html'">
+            <i>mail</i>
+            <span>email</span>
+          </button>
+        </nav>
+
+      </nav>
+    </div>
+    <nav class="bottom s bottom-shadow">
+      <a href="/">
+        <i>home</i>
+      </a>
+      <a href="/blog" class="active">
+        <i>book</i>
+      </a>
+      <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+        <i>share</i>
+      </a>
+    </nav>
+    <div class="toast green" id="toast">
+      <i>done</i>
+      <span>Copied URL!</span>
+    </div>
+    <main class="responsive small-padding">
+      <h3 class="bold underline padding">Posts</h3>
+      <div class="page left active">
+        <div class="grid">
+          <div class="s12">
+            <article class="padding">
+              <div class="">
+                <h5>
+                  <p>Bookshelf AI Instructable</p>
+                </h5>
+                <p> A small side project using a Pi 4B and opencv to recommend books. This was mostly an experiment with
+                  LLMs and test whether it was possible to generate recommendations without models "hallucinating". </p>
+                <nav>
+                  <a href="https://www.instructables.com/Remaking-the-Bookshelf-With-AI">
+                    <button class="round border" style="margin-left: 0px;">
+                      <img class="responsive"
+                        src="https://yt3.googleusercontent.com/ytc/AIdro_k1ckTJ3oQ1qU2LPIWAUtqTEqeiId8VH-Lar_sMlS88zsyq=s160-c-k-c0x00ffffff-no-rj">
+                      <span style="color:white">Instructables</span>
+                    </button>
+                  </a>
+                </nav>
+              </div>
+            </article>
+          </div>
+          <div class="s12">
+            <article class="padding">
+              <div class="">
+                <h5>
+                  <p class="bold">New release:&nbsp;</p>HA-Tizen
+                </h5>
+                <p> This is a small, unofficial companion app written using flutter-tizen to control lights and switches
+                  using Home Assistant. I created it because I wanted to use Home Assistant on my tizen watch which is
+                  no longer officially supported by Samsung, and wanted there to be a way to control devices without
+                  manually typing out tokens.</p>
+                <nav>
+                  <a href="https://github.com/Dragon863/Tizen-HA/">
+                    <button class="round border" style="margin-left: 0px;">
+                      <img class="responsive"
+                        src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
+                      <span style="color:white">GitHub</span>
+                    </button>
+                  </a>
+                </nav>
+              </div>
+            </article>
+          </div>
+          <div class="s12">
+            <article class="padding">
+              <div class="">
+                <h5>
+                  <p class="bold">New release:&nbsp;</p>ThinkLED
+                </h5>
+                <p> ThinkLED is a simple flutter app for thinkpads using tpacpi on linux. It can be used to toggle the
+                  power and lid LEDs, or transmit a message in morse code using the lid LED. This is my first flutter
+                  project</p>
+                <nav>
+                  <a href="https://github.com/Dragon863/ThinkLed">
+                    <button class="round border" style="margin-left: 0px;">
+                      <img class="responsive"
+                        src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
+                      <span style="color:white">GitHub</span>
+                    </button>
+                  </a>
+                </nav>
+              </div>
+            </article>
+          </div>
+          <div class="s12 m l">
+            <article class="no-padding">
+              <div class="grid no-space">
+                <div class="s4">
+                  <img class="responsive" src="blog/media/root_cover.jpg"
+                    alt="A white amazon echo dot 2nd generation with rainbow lights on its LED ring"
+                    style="height:30vh"></img>
+                </div>
+                <div class="s8">
+                  <div class="padding">
+                    <h5 class="bold">Rooting the Amazon Echo Dot</h5>
+                    <p>A new method to gain a tethered root shell on the Echo Dot 2nd generation by patching the Little
+                      Kernel.</p>
+                    <nav>
+                      <button class="border round" onclick="window.location.href='/blog/echoroot.html'">Read</button>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="s12 s">
+            <article class="no-padding">
+              <div class="s6">
                 <img class="responsive" src="blog/media/root_cover.jpg"
                   alt="A white amazon echo dot 2nd generation with rainbow lights on its LED ring"
                   style="height:30vh"></img>
               </div>
-              <div class="s8">
+              <div class="s6">
                 <div class="padding">
                   <h5 class="bold">Rooting the Amazon Echo Dot</h5>
                   <p>A new method to gain a tethered root shell on the Echo Dot 2nd generation by patching the Little
@@ -130,37 +173,37 @@
                   </nav>
                 </div>
               </div>
-            </div>
-          </article>
-        </div>
-        <div class="s12 s">
-          <article class="no-padding">
-            <div class="s6">
-              <img class="responsive" src="blog/media/root_cover.jpg"
-                alt="A white amazon echo dot 2nd generation with rainbow lights on its LED ring"
-                style="height:30vh"></img>
-            </div>
-            <div class="s6">
-              <div class="padding">
-                <h5 class="bold">Rooting the Amazon Echo Dot</h5>
-                <p>A new method to gain a tethered root shell on the Echo Dot 2nd generation by patching the Little
-                  Kernel.</p>
-                <nav>
-                  <button class="border round" onclick="window.location.href='/blog/echoroot.html'">Read</button>
-                </nav>
+            </article>
+          </div>
+          <div class="s12 m l">
+            <article class="no-padding">
+              <div class="grid no-space">
+                <div class="s4">
+                  <img class="responsive" src="blog/echo.jpeg"
+                    alt="An amazon echo dot 2nd generation on a shelf with a plant in the background"
+                    style="height:30vh"></img>
+                </div>
+                <div class="s8">
+                  <div class="padding">
+                    <h5 class="bold">Alexa, what is my Wi-Fi password?</h5>
+                    <p>Taking a closer look at the echo dot 2nd generation using a known CPU exploit reveals a lack
+                      of security for its password storage.</p>
+                    <nav>
+                      <button class="border round" onclick="window.location.href='/blog/alexa.html'">Read</button>
+                    </nav>
+                  </div>
+                </div>
               </div>
-            </div>
-          </article>
-        </div>
-        <div class="s12 m l">
-          <article class="no-padding">
-            <div class="grid no-space">
-              <div class="s4">
+            </article>
+          </div>
+          <div class="s12 s" style="padding-bottom:10vh">
+            <article class="no-padding">
+              <div class="s6">
                 <img class="responsive" src="blog/echo.jpeg"
                   alt="An amazon echo dot 2nd generation on a shelf with a plant in the background"
                   style="height:30vh"></img>
               </div>
-              <div class="s8">
+              <div class="s6">
                 <div class="padding">
                   <h5 class="bold">Alexa, what is my Wi-Fi password?</h5>
                   <p>Taking a closer look at the echo dot 2nd generation using a known CPU exploit reveals a lack
@@ -170,31 +213,11 @@
                   </nav>
                 </div>
               </div>
-            </div>
-          </article>
-        </div>
-        <div class="s12 s" style="padding-bottom:10vh">
-          <article class="no-padding">
-            <div class="s6">
-              <img class="responsive" src="blog/echo.jpeg"
-                alt="An amazon echo dot 2nd generation on a shelf with a plant in the background"
-                style="height:30vh"></img>
-            </div>
-            <div class="s6">
-              <div class="padding">
-                <h5 class="bold">Alexa, what is my Wi-Fi password?</h5>
-                <p>Taking a closer look at the echo dot 2nd generation using a known CPU exploit reveals a lack
-                  of security for its password storage.</p>
-                <nav>
-                  <button class="border round" onclick="window.location.href='/blog/alexa.html'">Read</button>
-                </nav>
-              </div>
-            </div>
-          </article>
+            </article>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 
 </html>
