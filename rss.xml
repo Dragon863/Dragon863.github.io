@@ -8,22 +8,33 @@
     <item>
       <title>Alexa, what is my WiFi password?</title>
       <link>https://dragon863.github.io/blog/alexa.html</link>
-      <description>Taking a closer look at the Echo Dot 2nd generation using a known CPU exploit reveals a lack of security for its password storage.</description>
+      <description>Taking a closer look at the Echo Dot 2nd generation using a known CPU exploit
+        reveals a lack of security for its password storage.</description>
       <pubDate>Wed, 15 Mar 2023 00:00:00 GMT</pubDate>
     </item>
 
     <item>
       <title>Rooting the Amazon Echo Dot</title>
       <link>https://dragon863.github.io/blog/echoroot.html</link>
-      <description>A new method to gain a tethered root shell on the Echo Dot 2nd generation by patching the Little Kernel.</description>
+      <description>A new method to gain a tethered root shell on the Echo Dot 2nd generation by
+        patching the Little Kernel.</description>
       <pubDate>Wed, 19 Jul 2023 00:00:00 GMT</pubDate>
     </item>
-
     <item>
       <title>ThinkLED</title>
       <link>https://github.com/Dragon863/ThinkLed</link>
-      <description>ThinkLED is a simple flutter app for thinkpads using tpacpi on linux. It can be used to toggle the power and lid LEDs, or transmit a message in morse code using the lid LED. This is my first flutter project.</description>
+      <description>ThinkLED is a simple flutter app for thinkpads using tpacpi on linux. It can be
+        used to toggle the power and lid LEDs, or transmit a message in morse code using the lid
+        LED. This is my first flutter project.</description>
       <pubDate>Tue, 21 nov 2023 20:15:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>AI instructable</title>
+      <link>https://www.instructables.com/Remaking-the-Bookshelf-With-AI</link>
+      <description> A small side project using a Pi 4B and opencv to recommend books. This was
+        mostly an experiment with LLMs and test whether it was possible to generate recommendations
+        without models "hallucinating". </description>
+      <pubDate>Fri, 21 Jun 2024 19:00:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
