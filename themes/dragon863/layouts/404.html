@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Dragon863 - 404</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.css" rel="stylesheet" />
+        <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.js"></script>
+        <script type="module"
+            src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
+        <script src='https://analytics.stacc.cc/api/script/4Wx5IIzJGQ8p'></script>
+        <script src="/js/clipboard.js"></script>
+        <meta name="author" content="Daniel B">
+        <meta name="description" content="404: Page not found">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    </head>
+
+    <body class="dark"
+        style="--primary:#FF2D2D;--secondary-container:#ff242465;--on-primary-container:#FFFFFF;--on-secondary-container:#FFFFFF;--on-surface:#FFFFFF;--on-primary:#FFFFFF;--on-secondary:#FFFFFF;background-color:black;">
+        <nav class="right right-shadow white-text m l">
+            <img src="/img/profile-picture.png" class="circle large transparent" alt="Profile Picture"></img>
+            <a href="/">
+                <i>home</i>
+                <div>Home</div>
+            </a>
+            <a href="/posts/">
+                <i>book</i>
+                <div>Blog</div>
+            </a>
+            <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+                <i>share</i>
+                <div>Share</div>
+            </a>
+        </nav>
+        <div class="modal" id="share">
+            <h5 class="white-text bold">Share Page</h5>
+            <div>Send the link to this page!</div>
+            <nav class="left-align">
+                <nav class="no-space">
+                    <button class="border left-round" onclick="sharePage()">
+                        <i>link</i>
+                        <span id="copyText">Copy URL</span>
+                    </button>
+                    <button class="border right-round">
+                        <i>mail</i>
+                        <span>email</span>
+                    </button>
+                </nav>
+
+            </nav>
+        </div>
+        <nav class="bottom s bottom-shadow">
+            <a href="/">
+                <i>home</i>
+            </a>
+            <a href="/posts/">
+                <i>book</i>
+            </a>
+            <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+                <i>share</i>
+            </a>
+        </nav>
+        <main>
+            <div style="height:100vh">
+                <div class="padding absolute center middle">
+                    <h1 class="white-text center-align bold">
+                        4<span style="display: inline-block; transform: translateY(0.2em) rotate(20deg);">0</span>4
+                    </h1>
+                    <h5 class="white-text center-align">The page is a lie.</h5>
+
+                </div>
+                <div class="toast green white-text" id="toast">
+                    <i>done</i>
+                    <span>Copied URL!</span>
+                </div>
+        </main>
+    </body>
+
+</html>

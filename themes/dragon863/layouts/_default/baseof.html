@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    {{ partial "head.html" . }}
+
+    <body class="dark"
+        style="--primary:#FF2D2D;--secondary-container:#ff242465;--on-primary-container:#FFFFFF;--on-secondary-container:#FFFFFF;--on-surface:#FFFFFF;--on-primary:#FFFFFF;--on-secondary:#FFFFFF">
+        {{- partial "header.html" . -}}
+        <main class="responsive">
+            <div class="page left active">
+                {{- block "main" . }}{{- end }}
+            </div>
+            {{- partial "footer.html" . -}}
+        </main>
+    </body>
+
+</html>

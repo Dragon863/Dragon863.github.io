@@ -1,0 +1,14 @@
+{{ $dateTime := .PublishDate.Format "2006-01-02" }}
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+{{ with .Params.buttons }}
+<nav>
+    {{ range . }}
+    <a href="{{ .href }}">
+        <button class="round border" style="margin-left: 0px;">
+            <img class="responsive" src="{{ .imgUrl }}" alt="Button Image">
+            <span style="color:white">{{ .text }}</span>
+        </button>
+    </a>
+    {{ end }}
+</nav>
+{{ end }}

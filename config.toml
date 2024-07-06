@@ -1,0 +1,6 @@
+baseURL = 'https://danieldb.uk'
+languageCode = 'en-gb'
+title = 'Dragon863'
+theme='dragon863'
+[markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files

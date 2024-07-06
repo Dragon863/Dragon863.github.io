@@ -1,0 +1,79 @@
+{{ define "main" }}
+<!-- This file is a little (very) hacky as it uses hugo to inject into css. Don't do this. -->
+<h3 class="bold underline padding">Posts</h3>
+<div class="m l" style="padding-right: 5rem"></div>
+<div class="grid">
+    {{ range .Pages.ByPublishDate.Reverse }}
+    {{ if .Params.header_image }}
+    {{ $AltText := .Params.header_image_alt | default "Post Image" }}
+    {{ $objFit := .Params.header_image_fit | default "cover" }}
+    <div class="s12 m l">
+        <article class="no-padding">
+            <div class="grid no-space">
+                <div class="s4">
+                    <img class="responsive" src="/content-res/images/{{ .Params.header_image }}" alt="{{ $AltText }}"
+                        style="height:30vh;object-fit:{{ $objFit }};">
+                </div>
+                <div class="s8">
+                    <div class="padding">
+                        <h5 class="bold">
+                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        </h5>
+                        {{ partial "metadata-date.html" . }}
+                        <a href="{{ .RelPermalink }}">
+                            <p class="summary">
+                                {{ .Summary }}
+                            </p>
+                        </a>
+                        {{ partial "buttons.html" . }}
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Small Screen Layout -->
+    <div class="s12 s">
+        <article class="no-padding">
+            <div>
+                <img class="responsive" src="/content-res/images/{{ .Params.header_image }}" alt="{{ $AltText }}"
+                    style="height:30vh;object-fit:{{ $objFit }};">
+            </div>
+            <div>
+                <div class="padding">
+                    <h5 class="bold">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    </h5>
+                    <a href="{{ .RelPermalink }}">
+                        <p class="summary">
+                            {{ .Summary }}
+                        </p>
+                    </a>
+                    {{ partial "buttons.html" . }}
+                </div>
+            </div>
+
+        </article>
+    </div>
+    {{ else }}
+    <div class="s12">
+        <article class="padding">
+            <div>
+                <h5 class="bold">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h5>
+                {{ partial "metadata-date.html" . }}
+                <a href="{{ .RelPermalink }}">
+                    <p class="summary">
+                        {{ .Summary }}
+                    </p>
+                </a>
+                {{ partial "buttons.html" . }}
+            </div>
+        </article>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+
+{{ end }}

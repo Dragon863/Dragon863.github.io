@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Dragon863 - Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.css" rel="stylesheet" />
+        <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.0.8/dist/cdn/beer.min.js"></script>
+        <script type="module"
+            src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@0.1.5/dist/cdn/material-dynamic-colors.min.js"></script>
+        <script src='https://analytics.stacc.cc/api/script/4Wx5IIzJGQ8p'></script>
+        <script src="/js/clipboard.js"></script>
+        <meta name="author" content="Daniel B">
+        <meta name="description"
+            content="Hi there, I'm Daniel B (aka @Dragon863), a 16 year old developer. Welcome to my personal blog and portfolio!">
+        <meta name="keywords" content="Daniel B, Cybersecurity, Dragon863">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    </head>
+
+    <body class="dark"
+        style="--primary:#FF2D2D;--secondary-container:#ff242465;--on-primary-container:#FFFFFF;--on-secondary-container:#FFFFFF;--on-surface:#FFFFFF;--on-primary:#FFFFFF;--on-secondary:#FFFFFF;background-color:black;">
+        <nav class="right right-shadow white-text m l">
+            <img src="/img/profile-picture.png" class="circle large transparent" alt="Profile Picture"></img>
+            <a class="active" href="/">
+                <i>home</i>
+                <div>Home</div>
+            </a>
+            <a href="/posts/">
+                <i>book</i>
+                <div>Blog</div>
+            </a>
+            <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+                <i>share</i>
+                <div>Share</div>
+            </a>
+        </nav>
+        <div class="modal" id="share">
+            <h5 class="white-text bold">Share Page</h5>
+            <div>Send the link to this page!</div>
+            <nav class="left-align">
+                <nav class="no-space">
+                    <button class="border left-round" onclick="sharePage()">
+                        <i>link</i>
+                        <span id="copyText">Copy URL</span>
+                    </button>
+                    <button class="border right-round">
+                        <i>mail</i>
+                        <span>email</span>
+                    </button>
+                </nav>
+
+            </nav>
+        </div>
+        <nav class="bottom s bottom-shadow">
+            <a class="active" href="/">
+                <i>home</i>
+            </a>
+            <a href="/posts/">
+                <i>book</i>
+            </a>
+            <a data-ui=" #share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+                <i>share</i>
+            </a>
+        </nav>
+        <main>
+            <div style="height:100vh">
+                <img src="/img/index-bg.svg" class="responsive" alt="Background image - red waves"></img>
+                <div class="absolute top bottom left large large-margin m l" style="padding-top: 5%;">
+                    <div class="large-padding">
+                        <h2 class="bold white-text no-margin">Daniel B</h2>
+                        <h4 class="white-text no-margin"><a class="link"
+                                href="https://github.com/Dragon863">@Dragon863</a></h4>
+                        <div style="margin-top: 1rem;">Hi there! I am Daniel, a 16 year old developer whose interests
+                            include
+                            cybersecurity and hardware hacking, low level hardware, web design, and linux. You can
+                            contact me <a class="link" href="mailto:dragon863.dev@gmail.com">here</a></div>
+                        <nav>
+                            <button class="large white black-text" onclick="document.location.href='/posts/'">
+                                <i>book</i>
+                                <span>&nbsp;Blog</span>
+                            </button>
+                            <button class="large border white-border white-text"
+                                onclick="document.location.href='https://github.com/Dragon863'">
+                                <i>code</i>
+                                <span>&nbsp;Code</span>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+                <div class="absolute top bottom left small large-margin s" style="padding-top: 5%;">
+                    <div class="medium-padding">
+                        <h2 class="bold white-text no-margin">Daniel B</h2>
+                        <h4 class="white-text no-margin"><a class="link"
+                                href="https://github.com/Dragon863">@Dragon863</a></h4>
+                        <div style="margin-top: 1rem;">Hi there! I am Daniel B, a 16 year old developer whose interests
+                            include
+                            cybersecurity and hardware hacking, low level hardware, web design, and linux. You can
+                            contact me <a class="link" href="mailto:dragon863.dev@gmail.com">here</a></div>
+                        <nav>
+                            <button class="large white black-text" onclick="document.location.href='/posts/'">
+                                <i>book</i>
+                                <span>&nbsp;Blog</span>
+                            </button>
+                            <button class="large border white-border white-text"
+                                onclick="document.location.href='https://github.com/Dragon863'">
+                                <i>code</i>
+                                <span>&nbsp;Code</span>
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+                <div class="toast green white-text" id="toast">
+                    <i>done</i>
+                    <span>Copied URL!</span>
+                </div>
+        </main>
+    </body>
+
+</html>
