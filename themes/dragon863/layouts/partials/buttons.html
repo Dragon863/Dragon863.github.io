@@ -5,7 +5,9 @@
     {{ range . }}
     <a href="{{ .href }}">
         <button class="round border" style="margin-left: 0px;">
-            <img class="responsive" src="{{ .imgUrl }}" alt="Button Image">
+            {{ with .imgUrl }}
+            <img class="responsive" src="{{ . }}" alt="Button Image">
+            {{ end }}
             <span style="color:white">{{ .text }}</span>
         </button>
     </a>
