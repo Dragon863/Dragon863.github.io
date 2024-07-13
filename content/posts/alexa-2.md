@@ -7,6 +7,10 @@ header_image_fit: cover
 aliases:
     - /blog/echoroot
     - /blog/echoroot.html
+buttons:
+  - href: "https://github.com/Dragon863/EchoCLI/"
+    imgUrl: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+    text: "Github"
 ---
 
 A new method to gain a tethered root shell on the Echo Dot 2nd generation by patching the Little Kernel.

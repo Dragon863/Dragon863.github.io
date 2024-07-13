@@ -7,6 +7,10 @@ header_image_fit: cover
 aliases:
     - /blog/alexa
     - /blog/alexa.html
+buttons:
+  - href: "https://news.ycombinator.com/item?id=35399590"
+    text: "View on HN"
+    imgUrl: "https://news.ycombinator.com/y18.svg"
 ---
 
 Taking a closer look at the echo dot 2nd generation using a known CPU exploit reveals a lack of security for its password storage.
