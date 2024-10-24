@@ -1,0 +1,143 @@
+body {
+    --primary: #FF2D2D !important;
+    --secondary-container: #ff242465 !important;
+    --on-primary-container: #FFFFFF !important;
+    --on-secondary-container: #FFFFFF !important;
+    --on-surface: #FFFFFF !important;
+    --on-primary: #FFFFFF !important;
+    --on-secondary: #FFFFFF !important;
+    background-color: black !important;
+}
+
+main {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    background-color: #000000;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/img/bg.svg');
+    color: #ffffff;
+    position: relative;
+}
+
+#main-box {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    pointer-events: none;
+}
+
+
+.main-top {
+    z-index: 5;
+    position: relative;
+    display: flex;
+}
+
+.name {
+    font-weight: 700;
+    font-family: Rubik, sans-serif;
+    font-size: 5em;
+    margin-top: 0px;
+}
+
+a .link {
+    text-shadow: 0 0 40px var(--primary) !important;
+}
+
+
+
+.eyebrow {
+    font-weight: 700;
+    font-family: Rubik, sans-serif;
+    color: grey !important;
+    font-size: 1.8em;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.sub-name {
+    font-weight: 700;
+    font-family: Rubik, sans-serif;
+    font-size: 1.8em;
+    margin-top: 24px;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+@media (min-width: 769px) {
+    .content {
+        width: 85vw;
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+
+    .name {
+        font-size: 7em;
+    }
+
+    .limit-width {
+        max-width: 45vw;
+    }
+
+
+    .spacer {
+        height: 50px;
+    }
+
+    .mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100vw;
+        margin-top: 3vh;
+        margin-left: 15px;
+        text-align: center;
+        padding-right: 7vw;
+    }
+
+    .sub-name {
+        font-size: 1.5em;
+    }
+
+    .limit-width {
+        max-width: 95vw;
+    }
+
+    .spacer {
+        height: 2.5vh;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .description {
+        text-align: center;
+    }
+
+    main {
+        background-size: 200%;
+    }
+}
+
+
+.description {
+    font-family: Rubik, sans-serif;
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+button i,
+button span {
+    color: white;
+}
