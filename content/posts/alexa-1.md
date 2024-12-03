@@ -7,15 +7,12 @@ header_image_fit: cover
 aliases:
     - /blog/alexa
     - /blog/alexa.html
+summary: "Taking a closer look at the echo dot 2nd generation using a known CPU exploit reveals a lack of security for its password storage."
 buttons:
   - href: "https://news.ycombinator.com/item?id=35399590"
     text: "View on HN"
     imgUrl: "https://news.ycombinator.com/y18.svg"
 ---
-
-Taking a closer look at the echo dot 2nd generation using a known CPU exploit reveals a lack of security for its password storage.
-
-<!--more-->
 
 Amazon is well known for its "echo" devices. Launched in 2014, these voice assistants were used to interact with Amazon's services, answer questions, and stream music. As time went on, the devices grew in popularity; as of 2023 they account for 21.7% of global smart speaker purchases. There have been several notable attempts to run custom software on echo devices, such as [this](https://github.com/echohacking/wiki/wiki/Echo) project, however they have proven to be relatively secure. With so many devices in use, a weaponized echo device could be a very dangerous tool, allowing eavesdropping on sensitive conversations, giving false responses, or extracting sensitive information such as Wi-Fi passwords. More modern devices from the company run FireOS, Amazon's modified version of Android, on a MediaTek CPU. This is interesting, as it means both the hardware and software are similar to that found on Amazon Fire tablets. I have been experimenting with an Echo Dot 2nd generation, which uses an MT8163 processor found in the HD 8 from 2018. This fire tablet was rooted using an exploit known as [amonet](https://github.com/xyzz/amonet), which means it was possible to port this exploit to the Echo.
 

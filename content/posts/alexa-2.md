@@ -4,6 +4,7 @@ date: 2023-07-19
 draft: false
 header_image: root_cover.jpg
 header_image_fit: cover
+summary: "A new method to gain a tethered root shell on the Echo Dot 2nd generation by patching the Little Kernel."
 aliases:
     - /blog/echoroot
     - /blog/echoroot.html
@@ -12,10 +13,6 @@ buttons:
     imgUrl: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
     text: "Github"
 ---
-
-A new method to gain a tethered root shell on the Echo Dot 2nd generation by patching the Little Kernel.
-
-<!--more-->
 
 Rooting involves obtaining the highest level of permissions on a computer system. There has always been a large community of Android users looking to root their devices, whether it is for performance, privacy, compatibility or other reasons. Since the Amazon Echo is also based on Android, it makes sense that people would also be looking for a way to root it. In my [previous post](https://dragon863.github.io/blog/alexa.html), I described pulling Wi-Fi passwords from Amazon Echos using an exploit known as amonet. Thanks to a debug feature implemented by Lab126 (Amazon's hardware development company) it is now possible to obtain a tethered root on the device. Thanks to strong security practices enforced by the company such as a chain of trust from the beginning of the boot process, this should not be a major issue. However, it is a great opportunity for people wanting to run their own software on the device (such as open source voice assistants). I have provided a CLI and two examples in my code here: one is a [web server](https://github.com/Dragon863/EchoCLI/blob/main/internal/spyserver.py) and [client](https://github.com/Dragon863/EchoCLI/blob/main/shell/spy.sh) which records and uploads microphone data from the device, and one which acts as a [notification indicator](https://github.com/Dragon863/EchoCLI/blob/main/shell/led.sh) for Home Assistant.
 

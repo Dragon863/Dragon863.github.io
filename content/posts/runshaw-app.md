@@ -1,0 +1,59 @@
+---
+title: "> Building an App to make College Life Easier"
+date: 2024-12-02
+draft: false
+header_image: "runshaw-coverimg.png"
+header_image_fit: cover
+summary: "I have been working on a Flutter app for me and my friends to share timetables, view bus updates and see who is free when. Read to find out how I built it and what I learned along the way."
+buttons:
+  - href: "https://runshaw.danieldb.uk"
+    text: "View Demo"
+---
+Note: You might notice it's been a while since my last post on here. I've been busy with college, but I'm going to try to post more often.
+
+#### High Seas Reviewer?
+
+To use the demo, click the button above. Choose "Use Email" once it loads (which may take a few seconds depending on your internet) and use the following credentials:
+- Email: `TES11111111@student.runshaw.ac.uk`
+- Password: `11111111`
+
+#### Introduction
+
+Why build this? At my college, we use an [ASP.net](https://dotnet.microsoft.com/en-us/apps/aspnet) based student portal to view most important information including timetables. One feature I found lacking was the ability to see who was free when, and I thought it would be a fun project to build an app to do this. In addition, the "mobile app" is actually just a webview of the website, which is not very user (or mobile data!) friendly. I decided to build a [Flutter](https://flutter.dev/) app to solve these problems.
+
+#### The Concept
+
+The first step was to decide what features the app would have. I wanted to include:
+- **Bus notifications**: The official college app's bus notifications are often delayed by ~20 mins
+- **Timetables**: A way to import your timetable from the iCal file provided by the college
+- **Free time**: A way to see who is and isn't available using gas in their timetable
+- **QR Codes**: College ID cards have QR codes which can be scanned to top up money, scan in to areas etc.
+
+#### The QR Codes
+
+
+<img class="round m l" src="student_id.png" style="width:30rem;height:30rem" alt="The main board of the echo"></img>
+<img class="round s" src="student_id.png" style="width:100%;height:100%" alt="The main board of the echo">
+
+QR codes were the first feature I worked on, as they provided an easy way to log in, sign up and add friends. Each student ID badge in my college has a QR code on the front with the student's ID number in text. From looking at a few badges, I noticed that the format was three letters followed by 8 numbers. This makes it a lot easier to validate the student IDs using a simple regex. I used the [mobile_scanner](https://pub.dev/packages/mobile_scanner) package for scanning the codes, as it supports iOS, Android and web.
+
+#### The Timetables
+
+The next feature I worked on was importing timetables. The college provides an iCal file which can be imported into most calendar apps, so I decided to parse this with [icalendar_parser](https://pub.dev/packages/icalendar_parser). This allowed me to store the timetable as a JSON, which I could then upload and sync with the backend in SQLite.
+
+#### Python Backend
+
+I went for a mixture of a dockerised python API and self hosted appwrite for the backend for this project. I chose appwrite just for authentication, as its security has been tested and it is easy to self host. The rest of the backend is a simple flask-based API, with three separate databases for users, timetables and bus updates. The API is hosted on my HP mini PC running Debian (I'll hopefully write a post about this soon!).
+
+#### Notifications
+
+Push notifications are tricky. I tried Firebase first, but eventually settled on [OneSignal](https://onesignal.com/) as it was easy to set up, had a great free tier and an admin SDK for Python. To send bus notifications, I used a subprocess on the backend to poll the bus tracker site every 10 seconds or so (only during reasonable times) and store the bus bay numbers in the sqlite table. If the bus bay number changes, a notification is sent to all users who have the bus route enabled (determined with OneSignal tags).
+
+#### Conclusion
+
+I learnt a bunch from this project, with the main takeaways being:
+- **iCal parsing**: I had never worked with iCal files before, so this was a fun challenge, especially calculating free time
+- **SQLite**: I had only used SQLite in small projects before, so this was a good opportunity to learn more about it
+- **Push notifications**: I had never properly worked with push notifications before, so this was a great learning experience
+
+If I were to remake this project, I'd probably remove appwrite altogether and write my own authentication system. I'd also like to add a feature to see who is in college at the moment, using the college's wifi network. I'm planning to release the app to the App Store soon with [Hack Club's "Cider" program](https://cider.hackclub.com/), so stay tuned for that!
