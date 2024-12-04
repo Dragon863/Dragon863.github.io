@@ -11,12 +11,6 @@ buttons:
 ---
 Note: You might notice it's been a while since my last post on here. I've been busy with college, but I'm going to try to post more often.
 
-#### High Seas Reviewer?
-
-To use the demo, click the button above. Choose "Use Email" once it loads (which may take a few seconds depending on your internet) and use the following credentials:
-- Email: `TES11111111@student.runshaw.ac.uk`
-- Password: `11111111`
-
 #### Introduction
 
 Why build this? At my college, we use an [ASP.net](https://dotnet.microsoft.com/en-us/apps/aspnet) based student portal to view most important information including timetables. One feature I found lacking was the ability to see who was free when, and I thought it would be a fun project to build an app to do this. In addition, the "mobile app" is actually just a webview of the website, which is not very user (or mobile data!) friendly. I decided to build a [Flutter](https://flutter.dev/) app to solve these problems.
