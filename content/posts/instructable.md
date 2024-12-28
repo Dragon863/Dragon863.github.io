@@ -1,5 +1,5 @@
 ---
-title: "> Bookshelf AI Instructable"
+title: "Bookshelf AI Instructable"
 description: "A small side project using a Pi 4B and opencv to recommend books."
 keywords: "AI, Raspberry Pi, opencv, bookshelf, instructable"
 date: 2024-06-21T10:00:00+01:00

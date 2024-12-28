@@ -1,5 +1,5 @@
 ---
-title: "> Alexa, what is my Wi-Fi password?"
+title: "Alexa, what is my Wi-Fi password?"
 date: 2023-03-16
 draft: false
 header_image: "echo.jpeg"

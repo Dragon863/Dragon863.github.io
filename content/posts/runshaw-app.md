@@ -1,5 +1,5 @@
 ---
-title: "> Building an App to make College Life Easier"
+title: "Building an App to make College Life Easier"
 date: 2024-12-02
 draft: false
 header_image: "runshaw-coverimg.png"

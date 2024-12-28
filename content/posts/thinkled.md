@@ -1,5 +1,5 @@
 ---
-title: "> New release: ThinkLED"
+title: "New release: ThinkLED"
 date: 2023-11-20T10:00:00+01:00
 buttons:
   - href: "https://github.com/Dragon863/ThinkLED/"

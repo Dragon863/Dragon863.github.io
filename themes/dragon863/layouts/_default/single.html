@@ -58,6 +58,12 @@
     nav a {
         text-decoration: none !important;
     }
+
+    code {
+        color: #ffbe85;
+        background: #161f27;
+        font-size: 24px;
+    }
 </style>
 <h1 class="bold large-padding m l" id="header-large">{{ .Title }}</h1>
 <h1 class="bold large-padding s" id="header-small">{{ .Title }}</h1>
@@ -77,5 +83,6 @@
 <br>
 <br>
 {{ partial "buttons.html" . }}
+<br>
 {{ .Content }}
 {{ end }}

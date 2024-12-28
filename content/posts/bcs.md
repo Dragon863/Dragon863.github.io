@@ -1,5 +1,5 @@
 ---
-title: "> New website designed"
+title: "New website designed"
 description: "I recently created a website for a local computer shop in Southport (England)"
 keywords: "Birkdale computers, repair, website, development, web dev"
 date: 2024-06-21T10:00:00+01:00

@@ -8,6 +8,9 @@
             {{ with .imgUrl }}
             <img class="responsive" src="{{ . }}" alt="Button Image">
             {{ end }}
+            {{ with not .imgUrl }}
+            <i style="color:white">link</i>
+            {{ end }}
             <span style="color:white">{{ .text }}</span>
         </button>
     </a>

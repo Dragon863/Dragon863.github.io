@@ -10,6 +10,7 @@
     {{ $AltText := .Params.header_image_alt | default "Post Image" }}
     {{ $objFit := .Params.header_image_fit | default "cover" }}
     <div class="s12 m l">
+        {{ if eq .Params.left true }}
         <article class="no-padding">
             <div class="grid no-space">
                 <div class="s4">
@@ -19,7 +20,7 @@
                 <div class="s8">
                     <div class="padding">
                         <h5 class="bold">
-                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            <a href="{{ .RelPermalink }}">> {{ .Title }}</a>
                         </h5>
                         {{ partial "metadata-date.html" . }}
                         <a href="{{ .RelPermalink }}">
@@ -32,6 +33,30 @@
                 </div>
             </div>
         </article>
+        {{ else }}
+        <article class="no-padding">
+            <div class="grid no-space">
+                <div class="s8">
+                    <div class="padding">
+                        <h5 class="bold">
+                            <a href="{{ .RelPermalink }}">> {{ .Title }}</a>
+                        </h5>
+                        {{ partial "metadata-date.html" . }}
+                        <a href="{{ .RelPermalink }}">
+                            <p class="summary">
+                                {{ .Summary }}
+                            </p>
+                        </a>
+                        {{ partial "buttons.html" . }}
+                    </div>
+                </div>
+                <div class="s4">
+                    <img class="responsive" src="/content-res/images/{{ .Params.header_image }}" alt="{{ $AltText }}"
+                        style="height:30vh;object-fit:{{ $objFit }};">
+                </div>
+            </div>
+        </article>
+        {{ end }}
     </div>
 
     <!-- Small Screen Layout -->
@@ -44,7 +69,7 @@
             <div>
                 <div class="padding">
                     <h5 class="bold">
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        <a href="{{ .RelPermalink }}">> {{ .Title }}</a>
                     </h5>
                     <a href="{{ .RelPermalink }}">
                         <p class="summary">
@@ -62,7 +87,7 @@
         <article class="padding">
             <div>
                 <h5 class="bold">
-                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                    <a href="{{ .RelPermalink }}">> {{ .Title }}</a>
                 </h5>
                 {{ partial "metadata-date.html" . }}
                 <a href="{{ .RelPermalink }}">
