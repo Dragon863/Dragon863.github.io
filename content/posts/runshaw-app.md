@@ -8,6 +8,9 @@ summary: "I have been working on a Flutter app for me and my friends to share ti
 buttons:
   - href: "https://runshaw.danieldb.uk"
     text: "View Demo"
+  - href: "https://apps.apple.com/us/app/my-runshaw/id6739817271"
+    text: "App Store ™"
+    imgUrl: "https://apps.apple.com/favicon.ico"
 ---
 Note: You might notice it's been a while since my last post on here. I've been busy with college, but I'm going to try to post more often.
 
@@ -51,3 +54,7 @@ I learnt a bunch from this project, with the main takeaways being:
 - **Push notifications**: I had never properly worked with push notifications before, so this was a great learning experience
 
 If I were to remake this project, I'd probably remove appwrite altogether and write my own authentication system. I'd also like to add a feature to see who is in college at the moment, using the college's wifi network. I'm planning to release the app to the App Store soon with [Hack Club's "Cider" program](https://cider.hackclub.com/), so stay tuned for that!
+
+#### Update (December 2024)
+
+The app is now live on the App Store! You can download it [here](https://apps.apple.com/us/app/my-runshaw/id6739817271). 
