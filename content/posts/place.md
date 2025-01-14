@@ -36,3 +36,7 @@ Unfortunately, the internet is the internet and so I had to implement a way for 
 #### Conclusion
 
 This project was a lot of fun to build, and I'm really happy with how it turned out. It's a great conversation starter, and I can't wait to see what people create with it. If you want to try it out for yourself, you can visit [place.danieldb.uk](https://place.danieldb.uk) and start placing pixels. I hope you enjoy it as much as I enjoyed creating it!
+
+#### Extra: Bot Protection
+
+Unpopular opinion: I don't think bot protection needs to be there for a project like this. I think it's interesting to see what bots can create, and it's a fun challenge to try and outsmart them. I've seen some really cool bots from running this project for a while, and I think it adds to the experience. That being said, I do have some basic rate limiting in place to prevent abuse, but I think it's important to strike a balance between protecting the project and just seeing people have fun reverse engineering it and creating cool stuff!
