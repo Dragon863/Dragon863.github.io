@@ -7,11 +7,18 @@ header_image_fit: cover
 summary: "I have been working on a Flutter app for me and my friends to share timetables, view bus updates and see who is free when. Read to find out how I built it and what I learned along the way."
 buttons:
   - href: "https://runshaw.danieldb.uk"
-    text: "View Demo"
+    text: "Web Demo"
   - href: "https://apps.apple.com/us/app/my-runshaw/id6739817271"
     text: "App Store ™"
     imgUrl: "https://apps.apple.com/favicon.ico"
+  - href: "https://myrunshaw.danieldb.uk"
+    text: "Landing Page"
 ---
+
+HIGH SEAS VOTERS: Please use the web demo linked above with login `TES11111111@student.runshaw.ac.uk` (8 ones) and password `11111111` (8 ones again) to see the app in action! It can be a little slow to first load on web, so be patient :)
+<br>
+<br>
+
 Note: You might notice it's been a while since my last post on here. I've been busy with college, but I'm going to try to post more often.
 
 #### Introduction
@@ -58,3 +65,7 @@ If I were to remake this project, I'd probably remove appwrite altogether and wr
 #### Update (December 2024)
 
 The app is now live on the App Store! You can download it [here](https://apps.apple.com/us/app/my-runshaw/id6739817271). 
+
+#### Update 2 (January 2025)
+
+Wow! The app has been a huge success, with almost 1000 downloads in the first few weeks after release on the App Store! I'm currently waiting for the 2 week closed beta period to end before I can submit it to the Play Store, which I hope may almost double user count. Due to the heavy usage, I've made significant changes to the app's backend, rewriting it completely to use postgres and an asynchronous fastapi setup, all containerised more neatly with docker. Overall the app handled scaling pretty well, with reliable and fast push notification despite ooften having 500 or more concurrent users checking where their buses were! In the future, I'd like to add support for sharing locations on a map of the campus, and maybe work with college IT to make timetable sync easier to set up.
