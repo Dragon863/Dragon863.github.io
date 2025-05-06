@@ -41,9 +41,9 @@ main {
 }
 
 .name {
-    font-weight: 700;
+    font-weight: 800;
     font-family: Rubik, sans-serif;
-    font-size: 5em;
+    font-size: 6em;
     margin-top: 0px;
 }
 
@@ -57,7 +57,7 @@ a .link {
     font-family: Rubik, sans-serif;
     color: grey !important;
     font-size: 1.8em;
-    margin-bottom: 4px;
+    margin-bottom: 0px;
     text-transform: uppercase;
 }
 
@@ -65,7 +65,7 @@ a .link {
     font-weight: 700;
     font-family: Rubik, sans-serif;
     font-size: 1.8em;
-    margin-top: 24px;
+    margin-top: 6px;
     color: var(--primary);
     text-transform: uppercase;
 }
@@ -78,7 +78,7 @@ a .link {
     }
 
     .name {
-        font-size: 7em;
+        font-size: 8em;
     }
 
     .limit-width {

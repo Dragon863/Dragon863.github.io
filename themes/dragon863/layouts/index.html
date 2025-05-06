@@ -1,116 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title>Daniel Benge</title>
-        <meta name="author" content="Daniel Benge">
-        <meta property="og:site_name" content="Daniel Benge">
-        <meta name="description"
-            content="Hi there, I'm Daniel Benge (aka @Dragon863), a 16 year old developer. Welcome to my personal blog / portfolio!">
-        <meta name="keywords" content="Daniel Benge, Cybersecurity, Dragon863">
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
-        <link href="/css/beer.min.css" rel="stylesheet" />
-        <link href="/css/index.css" rel="stylesheet" />
-        <script type="module" src="/js/beer.min.js"></script>
-        <script src='https://analytics.stacc.cc/api/script/4Wx5IIzJGQ8p'></script>
-        <script src="/js/clipboard.js"></script>
-        <script src="/js/light.js"></script>
-        <link rel="preload" fetchpriority="high" as="image" href="/img/bg.svg" type="image/svg+xml">
-        <meta name="google-site-verification" content="ondYOXSCfn-zhOWKssd1D4U6X_cJBX8XNXnEj79Zr3E" />
-        <!-- Cloudflare Web Analytics -->
-        <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
-            data-cf-beacon='{"token": "096a034c74df42b2a391b8b82892b2e1"}'></script>
-        <!-- End Cloudflare Web Analytics -->
-    </head>
-    <!--We'll only use beercss for nav, everything else will be in plain css/html-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Daniel Benge</title>
+    <meta name="author" content="Daniel Benge">
+    <meta property="og:site_name" content="Daniel Benge">
+    <meta name="description"
+        content="Hi there, I'm Daniel Benge (aka @Dragon863), a 16 year old developer. Welcome to my personal blog / portfolio!">
+    <meta name="keywords" content="Daniel Benge, Cybersecurity, Dragon863">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="/css/beer.min.css" rel="stylesheet" />
+    <link href="/css/index.css" rel="stylesheet" />
+    <script type="module" src="/js/beer.min.js"></script>
+    <script src='https://analytics.stacc.cc/api/script/4Wx5IIzJGQ8p'></script>
+    <script src="/js/clipboard.js"></script>
+    <script src="/js/light.js"></script>
+    <link rel="preload" fetchpriority="high" as="image" href="/img/bg.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <meta name="google-site-verification" content="ondYOXSCfn-zhOWKssd1D4U6X_cJBX8XNXnEj79Zr3E" />
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "096a034c74df42b2a391b8b82892b2e1"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+</head>
+<!--We'll only use beercss for nav, everything else will be in plain css/html-->
 
-    <body class="dark" style="height:100vh">
-        <nav class="right white-text m l">
-            <img src="/img/profile-picture.png" class="circle large transparent" alt="Profile Picture" />
-            <a class="active" href="/">
-                <i>home</i>
-                <div>Home</div>
-            </a>
-            <a href="/posts/">
-                <i>book</i>
-                <div>Blog</div>
-            </a>
-            <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
-                <i>share</i>
-                <div>Share</div>
-            </a>
-        </nav>
-        <dialog class="modal" id="share">
-            <h5 class="white-text bold">Share Page</h5>
-            <div>Send the link to this page!</div>
-            <nav class="left-align">
-                <nav class="no-space">
-                    <button class="border left-round" onclick="sharePage()">
-                        <i>link</i>
-                        <span id="copyText">Copy URL</span>
-                    </button>
-                    <button class="border right-round">
-                        <i>mail</i>
-                        <span>email</span>
-                    </button>
-                </nav>
-
+<body class="dark" style="height:100vh">
+    <nav class="right white-text m l">
+        <img src="/img/profile-picture.png" class="circle large transparent" alt="Profile Picture" />
+        <a class="active" href="/">
+            <i>home</i>
+            <div>Home</div>
+        </a>
+        <a href="/posts/">
+            <i>book</i>
+            <div>Blog</div>
+        </a>
+        <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+            <i>share</i>
+            <div>Share</div>
+        </a>
+    </nav>
+    <dialog class="modal" id="share">
+        <h5 class="white-text bold">Share Page</h5>
+        <div>Send the link to this page!</div>
+        <nav class="left-align">
+            <nav class="no-space">
+                <button class="border left-round" onclick="sharePage()">
+                    <i>link</i>
+                    <span id="copyText">Copy URL</span>
+                </button>
+                <button class="border right-round">
+                    <i>mail</i>
+                    <span>email</span>
+                </button>
             </nav>
-        </dialog>
-        <nav class="bottom s bottom-shadow">
-            <a class="active" href="/">
-                <i>home</i>
-            </a>
-            <a href="/posts/">
-                <i>book</i>
-            </a>
-            <a data-ui=" #share" onclick="document.getElementById('copyText').innerText='Copy URL'">
-                <i>share</i>
-            </a>
+
         </nav>
-        <main style="height:100%">
-            <div style="height:100%">
-                <div id="main-box"
-                    style="background: radial-gradient(circle at -100px -100px, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.8) 80px);">
-                </div>
-                <div class="main-top">
-                    <div class="content">
-                        <h3 class="eyebrow center-align mobile">HEY THERE 👋️! I'M</h3>
-                        <h3 class="eyebrow desktop">HEY THERE 👋️! I'M</h3>
-                        <h1 class="name desktop">Daniel Benge</h1>
-                        <h1 class="name center-align mobile">Daniel Benge</h1>
-                        <h2 class="sub-name desktop">Developer + A-Level Student</h2>
-                        <h2 class="sub-name center-align mobile">Developer + A-Level Student</h2>
-                        <div class="spacer"></div>
-                        <div class="spacer"></div>
-                        <p class="white-text limit-width description">I'm a 16 year old developer in the UK. I love
-                            cybersecurity,
-                            hardware
-                            hacking, linux, self-hosting, web design and flutter, and I'm also the founder of <a
-                                class="link underline" href="https://runshaw.hackclub.com/">Runshaw Hack Club</a>. Want
-                            to get in touch? Feel free to e-mail me at <a class="link underline"
-                                href="mailto:hi@danieldb.uk">hi@danieldb.uk</a>!</p>
-                        <div class="spacer"></div>
-                        <div class="buttons-grid">
-                            <button class="extend border circle" onclick="navigateToGithub()">
-                                <i>code</i>
-                                <span>GitHub</span>
-                            </button>
-                            <button class="extend border circle" onclick="mailTo()">
-                                <i>mail</i>
-                                <span>Email</span>
-                            </button>
-                            <button class="extend border circle" onclick="navigateToBlog()">
-                                <i>book</i>
-                                <span>Blog</span>
-                            </button>
-                        </div>
+    </dialog>
+    <nav class="bottom s bottom-shadow">
+        <a class="active" href="/">
+            <i>home</i>
+        </a>
+        <a href="/posts/">
+            <i>book</i>
+        </a>
+        <a data-ui=" #share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+            <i>share</i>
+        </a>
+    </nav>
+    <main style="height:100%">
+        <div style="height:100%">
+            <div id="main-box"
+                style="background: radial-gradient(circle at -100px -100px, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.8) 80px);">
+            </div>
+            <div class="main-top">
+                <div class="content">
+                    <h3 class="eyebrow center-align mobile">HEY THERE 👋️! I'M</h3>
+                    <h3 class="eyebrow desktop">HEY THERE 👋️! I'M</h3>
+                    <h1 class="name desktop">Daniel Benge</h1>
+                    <h1 class="name center-align mobile">Daniel Benge</h1>
+                    <h2 class="sub-name desktop">Developer + A-Level Student</h2>
+                    <h2 class="sub-name center-align mobile">Developer + A-Level Student</h2>
+                    <div class="spacer"></div>
+                    <div class="spacer"></div>
+                    <p class="white-text limit-width description">I'm a 16 year old developer in the UK. I love
+                        cybersecurity,
+                        hardware
+                        hacking, linux, self-hosting, web design and flutter, and I'm also the founder of <a
+                            class="link underline" href="https://runshaw.hackclub.com/">Runshaw Hack Club</a>. Want
+                        to get in touch? Feel free to e-mail me at <a class="link underline"
+                            href="mailto:hi@danieldb.uk">hi@danieldb.uk</a>!</p>
+                    <div class="spacer"></div>
+                    <div class="buttons-grid">
+                        <button class="extend border circle" onclick="navigateToGithub()">
+                            <i>code</i>
+                            <span>GitHub</span>
+                        </button>
+                        <button class="extend border circle" onclick="mailTo()">
+                            <i>mail</i>
+                            <span>Email</span>
+                        </button>
+                        <button class="extend border circle" onclick="navigateToBlog()">
+                            <i>book</i>
+                            <span>Blog</span>
+                        </button>
                     </div>
                 </div>
             </div>
-        </main>
-    </body>
+        </div>
+    </main>
+</body>
 
 </html>
