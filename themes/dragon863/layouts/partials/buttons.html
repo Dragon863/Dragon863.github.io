@@ -6,7 +6,7 @@
     <a href="{{ .href }}">
         <button class="round border" style="margin-left: 0px;">
             {{ with .imgUrl }}
-            <img class="responsive" src="{{ . }}" alt="Button Image">
+            <img class="responsive" style="width:auto" src="{{ . }}" alt="Button Image">
             {{ end }}
             {{ with not .imgUrl }}
             <i style="color:white">link</i>

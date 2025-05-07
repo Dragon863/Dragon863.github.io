@@ -31,50 +31,7 @@
 <!--We'll only use beercss for nav, everything else will be in plain css/html-->
 
 <body class="dark" style="height:100vh">
-    <nav class="right white-text m l">
-        <img src="/img/profile-picture.png" class="circle large transparent" alt="Profile Picture" />
-        <a class="active" href="/">
-            <i>home</i>
-            <div>Home</div>
-        </a>
-        <a href="/posts/">
-            <i>book</i>
-            <div>Blog</div>
-        </a>
-        <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
-            <i>share</i>
-            <div>Share</div>
-        </a>
-    </nav>
-    <div class="overlay blur"></div>
-    <dialog id="share">
-        <h5 class="white-text bold" style="font-family: 'Rubik';">Share Page</h5>
-        <div>Send the link to this page!</div>
-        <nav class="left-align">
-            <nav class="no-space">
-                <button class="border left-round" onclick="sharePage()">
-                    <i>link</i>
-                    <span id="copyText">Copy URL</span>
-                </button>
-                <button class="border right-round">
-                    <i>mail</i>
-                    <span>Email</span>
-                </button>
-            </nav>
-
-        </nav>
-    </dialog>
-    <nav class="bottom s bottom-shadow">
-        <a class="active" href="/">
-            <i>home</i>
-        </a>
-        <a href="/posts/">
-            <i>book</i>
-        </a>
-        <a data-ui=" #share" onclick="document.getElementById('copyText').innerText='Copy URL'">
-            <i>share</i>
-        </a>
-    </nav>
+    {{ partial "nav.html" (dict "currentPage" "home") }}
     <main style="height:100%">
         <div style="height:100%">
             <div id="main-box"

@@ -1,9 +1,19 @@
 {{ define "main" }}
+<div class="overlay blur"></div>
 <!-- This file is a little (very) hacky as it uses hugo to inject into css. Don't do this. -->
 <h3 class="bold underline" style="padding-left:1rem;padding-top:1rem">Posts</h3>
 <h3 style="padding-left:1rem;font-size:1.75rem;padding-bottom:1rem;">(Click / tap on a title to view the full post!)
 </h3>
-<div class="m l" style="padding-right: 5rem"></div>
+<style>
+    p {
+        font-family: 'Roboto Flex', sans-serif;
+    }
+
+    .summary {
+        line-height: normal;
+        color: rgb(235, 235, 235);
+    }
+</style>
 <div class="grid">
     {{ range .Pages.ByPublishDate.Reverse }}
     {{ if .Params.header_image }}
@@ -14,8 +24,10 @@
         <article class="no-padding">
             <div class="grid no-space">
                 <div class="s4">
+                    <!-- beautify ignore:start -->
                     <img class="responsive" src="/content-res/images/{{ .Params.header_image }}" alt="{{ $AltText }}"
                         style="height:30vh;object-fit:{{ $objFit }};">
+                    <!-- beautify ignore:end -->
                 </div>
                 <div class="s8">
                     <div class="padding">
@@ -23,6 +35,7 @@
                             <a href="{{ .RelPermalink }}">> {{ .Title }}</a>
                         </h5>
                         {{ partial "metadata-date.html" . }}
+                        <br>
                         <a href="{{ .RelPermalink }}">
                             <p class="summary">
                                 {{ .Summary }}
@@ -42,6 +55,7 @@
                             <a href="{{ .RelPermalink }}">> {{ .Title }}</a>
                         </h5>
                         {{ partial "metadata-date.html" . }}
+                        <br>
                         <a href="{{ .RelPermalink }}">
                             <p class="summary">
                                 {{ .Summary }}
@@ -51,8 +65,10 @@
                     </div>
                 </div>
                 <div class="s4">
+                    <!-- beautify ignore:start -->
                     <img class="responsive" src="/content-res/images/{{ .Params.header_image }}" alt="{{ $AltText }}"
                         style="height:30vh;object-fit:{{ $objFit }};">
+                    <!-- beautify ignore:end -->
                 </div>
             </div>
         </article>
@@ -63,14 +79,18 @@
     <div class="s12 s">
         <article class="no-padding">
             <div>
+                <!-- beautify ignore:start -->
                 <img class="responsive" src="/content-res/images/{{ .Params.header_image }}" alt="{{ $AltText }}"
                     style="height:30vh;object-fit:{{ $objFit }};">
+                <!-- beautify ignore:end -->
             </div>
             <div>
                 <div class="padding">
                     <h5 class="bold">
                         <a href="{{ .RelPermalink }}">> {{ .Title }}</a>
                     </h5>
+                    {{ partial "metadata-date.html" . }}
+                    <br>
                     <a href="{{ .RelPermalink }}">
                         <p class="summary">
                             {{ .Summary }}
@@ -90,6 +110,7 @@
                     <a href="{{ .RelPermalink }}">> {{ .Title }}</a>
                 </h5>
                 {{ partial "metadata-date.html" . }}
+                <br>
                 <a href="{{ .RelPermalink }}">
                     <p class="summary">
                         {{ .Summary }}

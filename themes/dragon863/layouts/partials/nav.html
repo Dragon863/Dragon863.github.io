@@ -1,0 +1,47 @@
+<nav class="right white-text m l">
+    <img src="/img/profile-picture.png" class="circle large transparent" alt="Profile Picture" />
+    <!-- beautify ignore:start -->
+    <a class="{{ if eq .currentPage "home" }}active{{ end }}" href="/">
+        <i>home</i>
+        <div>Home</div>
+    </a>
+    <a class="{{ if eq .currentPage "blog" }}active{{ end }}" href="/posts/">
+        <i>book</i>
+        <div>Blog</div>
+    </a>
+    <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+        <i>share</i>
+        <div>Share</div>
+    </a>
+    <!-- beautify ignore:end -->
+</nav>
+<div class="overlay blur"></div>
+<dialog id="share">
+    <h5 class="white-text bold" style="font-family: 'Rubik'; padding-left: 0px !important">Share Page</h5>
+    <div>Send the link to this page!</div>
+    <nav class="left-align">
+        <nav class="no-space">
+            <button class="border left-round" onclick="sharePage()">
+                <i>link</i>
+                <span id="copyText">Copy URL</span>
+            </button>
+            <button class="border right-round">
+                <i>mail</i>
+                <span>Email</span>
+            </button>
+        </nav>
+    </nav>
+</dialog>
+<!-- beautify ignore:start -->
+<nav class="bottom s bottom-shadow">
+    <a class="{{ if eq .currentPage "home" }}active{{ end }}" href="/">
+        <i>home</i>
+    </a>
+    <a class="{{ if eq .currentPage "blog" }}active{{ end }}" href="/posts/">
+        <i>book</i>
+    </a>
+    <a data-ui="#share" onclick="document.getElementById('copyText').innerText='Copy URL'">
+        <i>share</i>
+    </a>
+</nav>
+<!-- beautify ignore:end -->
