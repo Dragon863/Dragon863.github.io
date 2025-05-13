@@ -4,7 +4,7 @@
 
 <body class="dark"
     style="--primary:#FF2D2D;--secondary-container:#ff242465;--on-primary-container:#FFFFFF;--on-secondary-container:#FFFFFF;--on-surface:#FFFFFF;--on-primary:#FFFFFF;--on-secondary:#FFFFFF">
-    {{- partial "header.html" . -}}
+    {{ partial "nav.html" (dict "currentPage" "blog") }}
     <main class="responsive">
         <div class="page left active">
             {{- block "main" . }}{{- end }}

@@ -6,8 +6,8 @@ function navigateToGithub() {
     window.open("https://github.com/Dragon863", "_blank");
 }
 
-function navigateToBlog() {
-    document.location = "/posts";
+function navigateToLinkedIn() {
+    document.location = "https://www.linkedin.com/in/daniel-benge-672176365/";
 }
 
 function mailTo() {

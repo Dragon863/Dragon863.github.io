@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+{{ partial "head.html" . }}
+<link href="/css/experience.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+
+<body class="dark"
+    style="--primary:#FF2D2D;--secondary-container:#ff242465;--on-primary-container:#FFFFFF;--on-secondary-container:#FFFFFF;--on-surface:#FFFFFF;--on-primary:#FFFFFF;--on-secondary:#FFFFFF">
+    {{ partial "nav.html" (dict "currentPage" "mywork") }}
+    <main class="responsive">
+        <div class="page left active">
+            {{- block "main" . }}
+            <h5 class="max center-align" style="margin-bottom: 24px;margin-top: 12px">My Experience & Work</h5>
+            {{- end }}
+        </div>
+        {{- partial "footer.html" . -}}
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const feedUrl = `${window.location.protocol}//${window.location.host}/feed/feed.json`;
+
+            try {
+                const res = await fetch(feedUrl);
+                const feed = await res.json();
+
+                const container = document.createElement('div');
+                const smallList = document.createElement('ul');
+                smallList.classList.add('list');
+                smallList.classList.add('border');
+                smallList.classList.add('medium-padding');
+
+                // Sort items by date_published descending
+                const sortedItems = feed.items.sort((a, b) =>
+                    new Date(b.date_published) - new Date(a.date_published)
+                );
+
+                for (const item of sortedItems) {
+                    if (item.type === 'large') {
+                        const article = document.createElement('article');
+                        article.className = 'no-padding';
+
+                        if (!item.left) {
+                            article.innerHTML = `
+                            <div class="grid no-space">
+                                <div class="s12 m4">
+                                    <img class="responsive" src="${item.image || ''}" alt="">
+                                </div>
+                                <div class="s12 m8">
+                                    <div class="padding">
+                                        <div class="grey-text">${new Date(item.date_published).toLocaleDateString()}</div>
+                                        <h5 class="bold no-margin">${item.title}</h5>
+                                        <p>${item.summary}</p>
+                                        ${item.button_url && item.button_text ? `
+                                            <nav>
+                                                <a href="${item.button_url}" target="_blank">
+                                                    ${item.button_color ? `<button class="small-round no-margin ${item.button_color}">${item.button_text}</button>`
+                                        : `<button class="border round">${item.button_text}</button>`}
+                                                </a>
+                                            </nav>` : ''
+                                }
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+
+                            container.appendChild(article);
+                        } else {
+                            article.innerHTML = `
+                            <div class="grid no-space">
+                                <div class="s12 m8">
+                                    <div class="padding">
+                                        <div class="grey-text">${new Date(item.date_published).toLocaleDateString()}</div>
+                                        <h5 class="bold no-margin">${item.title}</h5>
+                                        <p>${item.summary}</p>
+                                        ${item.button_url && item.button_text ? `
+                                            <nav>
+                                                <a href="${item.button_url}" target="_blank">
+                                                    ${item.button_color ? `<button class="small-round no-margin ${item.button_color}">${item.button_text}</button>`
+                                        : `<button class="border round">${item.button_text}</button>`}
+                                                </a>
+                                            </nav>` : ''
+                                }
+                                    </div>
+                                </div>
+                                <div class="s12 m4">
+                                    <img class="responsive" src="${item.image || ''}" alt="">
+                                </div>
+                            </div>
+                        `;
+
+                            container.appendChild(article);
+                        }
+                    } else if (item.type === 'small') {
+                        const li = document.createElement('li');
+                        li.onclick = () => {
+                            window.open(item.button_url, '_blank');
+                        };
+
+                        li.innerHTML = `
+                            ${item.image ? `<img class="round" src="${item.image}" style="align-self: start;background-color: white;" alt="">` : ''}
+                            <div class="max wrap">
+                                <h6 class="small">${item.title}</h6>
+                                <div>${item.summary}</div>
+                                <div class="grey-text" style="padding-top: 2px;">${new Date(item.date_published).toLocaleDateString()}</div>
+
+                            </div>
+                        `;
+
+                        smallList.appendChild(li);
+                    }
+                }
+
+                // Append to DOM
+                const mainPage = document.querySelector('.page.left.active');
+                mainPage.appendChild(container);
+                if (smallList.children.length > 0) {
+                    mainPage.appendChild(smallList);
+                }
+
+            } catch (err) {
+                console.error('Failed to load experience feed:', err);
+            }
+        });
+    </script>
+</body>
+
+</html>
