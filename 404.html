@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      const redirectBase = "https://danieldb.uk";
+      const newPath = window.location.pathname + window.location.search + window.location.hash;
+      window.location.replace(redirectBase + newPath);
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a id="link" href="#">danieldb.uk</a>...</p>
+    <script>
+      document.getElementById("link").href = redirectBase + newPath;
+    </script>
+  </body>
+</html>
